@@ -1,13 +1,22 @@
-# Go Web 项目
+# Go Web 静态页面示例
 
-这是一个使用Go语言构建的简单Web服务器项目。
+这是一个使用Go语言提供静态页面的简单示例。
 
 ## 功能特点
 
-- 使用Go标准库`net/http`构建
-- 支持多个路由处理
-- 简单的HTML页面展示
-- 支持Vercel部署
+- 使用Go标准库`net/http`提供静态文件服务
+- 简单的Hello World静态页面
+- 响应式设计，适配各种设备
+
+## 项目结构
+
+```
+go_web/
+├── main.go          # Go服务器主程序
+├── static/          # 静态文件目录
+│   └── index.html   # 静态页面
+└── README.md        # 项目说明文档
+```
 
 ## 本地运行方法
 
@@ -18,28 +27,14 @@
    ```
 3. 在浏览器中访问：http://localhost:8080
 
-## Vercel部署
+## 部署说明
 
-1. 将代码推送到GitHub仓库
-2. 访问 [Vercel官网](https://vercel.com)
-3. 使用GitHub账号登录
-4. 点击"New Project"
-5. 选择您的GitHub仓库
-6. 在配置页面：
-   - Framework Preset: 选择"Other"
-   - Build Command: 留空
-   - Output Directory: 留空
-7. 点击"Deploy"
+本项目可以部署到任何支持Go的服务器或平台，如：
+- Vercel
+- Heroku
+- 普通Linux服务器
 
-部署完成后，Vercel会提供一个域名，您可以通过该域名访问您的网站。
-
-## 项目结构
-
-- `main.go`: 主程序文件，包含服务器配置和路由处理
-- `vercel.json`: Vercel部署配置文件
-- `README.md`: 项目说明文档
-
-## 路由说明
-
-- `/`: 首页
-- `/about`: 关于页面 
+部署时需要注意：
+1. 确保`static`目录被正确部署
+2. 设置正确的环境变量`PORT`
+3. 确保服务器有足够的权限访问静态文件 
